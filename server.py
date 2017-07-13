@@ -1,6 +1,6 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+@app.route('/api/v1/items/<int:item_id>')
+def get_item(item_id):
+    return r'{"name": "server_item", "id": "%d", "description": "Some boring stuff..."}' % item_id
